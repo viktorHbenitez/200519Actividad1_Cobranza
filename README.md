@@ -2,8 +2,6 @@
 ## Consumo de API's
 
 
-## Branch: VHBB_ActividadCobranza_Branch  
-
 ### Descripcion:
 
 - Consumir el siguiente webservice: localhost/capitulo4/consumoApi/Empleados/  
