@@ -1,6 +1,10 @@
-# Actividades 1
+# Actividades 1 : 
+## pantallas de Logeo, registro y recuperación de contraseñas  
 
-## VHBB_ActividadCobranza_Branch  
+# Actividad 2 : 
+## Compartir contenido en iOS  
+
+## Branch: VHBB_ActividadCobranza_Branch  
 
 ### Descripcion:
 
