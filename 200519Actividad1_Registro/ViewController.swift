@@ -29,11 +29,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         arrUser = [User]()
+       
         
-        self.addUser(name: "viktor", email: "Viktor@hotmail.com", contraseña: "12345", fechaNacimiento: "nose", telefono: "1234565", numEmpleado: "111111")
-        self.addUser(name: "hugo", email: "hugo@hotmail.com", contraseña: "111111", fechaNacimiento: "nose", telefono: "1234565", numEmpleado: "111111")
+        self.addUser(name: "viktor", email: "Viktor@hotmail.com", contraseña: "12345", fechaNacimiento: "20/01/1945", telefono: "1234565", numEmpleado: "111111", strAddress: "Montes Urales 470, Lomas - Virreyes, Lomas de Chapultepec, 11000 Ciudad de México", strCompany: "Oracle")
+        self.addUser(name: "hugo", email: "hugo@hotmail.com", contraseña: "111111", fechaNacimiento: "20/05/1992", telefono: "1234565", numEmpleado: "111111", strAddress: "Calle Río Lerma 232, Cuauhtémoc, 06500 Ciudad de México", strCompany: "Red Hat Mexico")
+         self.addUser(name: "Eduardo", email: "eduardo@hotmail.com", contraseña: "111111", fechaNacimiento: "20/05/1987", telefono: "1234565", numEmpleado: "111111", strAddress: "Villa panamerica 11525", strCompany: "Red Hat Mexico")
         
-
+        setUpPickerIntoTxf()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +46,36 @@ class ViewController: UIViewController {
         
     }
     
-    func addUser(name : String, email : String, contraseña : String, fechaNacimiento : String?, telefono : String, numEmpleado : String){
-        let dummyUser = User(name: name, email: email, contraseña: contraseña, numeroEmpledo: numEmpleado, fechaNacimiento: fechaNacimiento ?? "", telefono: telefono)
+    
+    func setUpPickerIntoTxf() {
+        
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.blue
+        toolBar.sizeToFit()
+        
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(ViewController.donePicker))
+        
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        txfUserLogin.inputAccessoryView = toolBar
+        txfDrossapLogin.inputAccessoryView = toolBar
+    }
+    
+    @objc func donePicker() {
+        
+        txfUserLogin.resignFirstResponder()
+        txfDrossapLogin.resignFirstResponder()
+        
+    }
+    
+    func addUser(name : String, email : String, contraseña : String, fechaNacimiento : String?, telefono : String, numEmpleado : String, strAddress : String? = nil , strCompany : String? = nil ){
+        let dummyUser = User(name: name, email: email, contraseña: contraseña, numeroEmpledo: numEmpleado, fechaNacimiento: fechaNacimiento ?? "", telefono: telefono, strAddress: strAddress, strCompany: strCompany)
         
         arrUser?.append(dummyUser)
         
@@ -88,7 +118,6 @@ class ViewController: UIViewController {
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) in
             
             if bSuccess{
-                print("HOla hola")
                 
             }
         })

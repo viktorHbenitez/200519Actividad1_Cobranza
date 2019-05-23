@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4295EE022959D8B0020D94F /* BDMSimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4295EDF22959D8B0020D94F /* BDMSimpleCell.swift */; };
 		E44A86572295944E00D697A3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A86562295944E00D697A3 /* APIService.swift */; };
 		E46479152292FE87002E452D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46479142292FE87002E452D /* AppDelegate.swift */; };
 		E46479172292FE87002E452D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46479162292FE87002E452D /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4295EDF22959D8B0020D94F /* BDMSimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMSimpleCell.swift; sourceTree = "<group>"; };
 		E44A86562295944E00D697A3 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E46479112292FE87002E452D /* 200519Actividad1_Registro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 200519Actividad1_Registro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46479142292FE87002E452D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				E46479142292FE87002E452D /* AppDelegate.swift */,
 				E46479162292FE87002E452D /* ViewController.swift */,
 				E464792822930347002E452D /* DashboardViewController.swift */,
+				E4295EDF22959D8B0020D94F /* BDMSimpleCell.swift */,
 				E464792E22933669002E452D /* SimpleCell.xib */,
 				E464792C22930E42002E452D /* RegisterViewController.swift */,
 				E464793022933A2C002E452D /* EmployeViewController.swift */,
@@ -157,6 +160,7 @@
 				E464793122933A2C002E452D /* EmployeViewController.swift in Sources */,
 				E44A86572295944E00D697A3 /* APIService.swift in Sources */,
 				E464792B22930357002E452D /* User.swift in Sources */,
+				E4295EE022959D8B0020D94F /* BDMSimpleCell.swift in Sources */,
 				E464792D22930E42002E452D /* RegisterViewController.swift in Sources */,
 				E46479172292FE87002E452D /* ViewController.swift in Sources */,
 				E46479152292FE87002E452D /* AppDelegate.swift in Sources */,
@@ -307,7 +311,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 454Y8VLD4V;
 				INFOPLIST_FILE = 200519Actividad1_Registro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,7 +330,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 454Y8VLD4V;
 				INFOPLIST_FILE = 200519Actividad1_Registro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

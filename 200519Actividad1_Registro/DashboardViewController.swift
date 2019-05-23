@@ -16,10 +16,14 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationController?.setNavigationBarHidden(true,  animated: true)
         
     
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true,  animated: true)
+
     }
     
     
@@ -43,14 +47,15 @@ class DashboardViewController: UIViewController {
     }
 }
 
-
-
 struct DataSecurity {
     var strTitle : String?
     var strSubtitle : String?
+    var strThirdData: String?
+    var strFourData : String?
+    
     var imgCustom : UIImage?
     
-    init(strTitle : String?, strSubtitle : String? , imgCustom : UIImage? = nil) {
+    init(strTitle : String?, strSubtitle : String? , strThird : String?, strFourData : String?,  imgCustom : UIImage? = nil) {
         
         if let strTitle = strTitle{
             self.strTitle = strTitle
@@ -60,6 +65,14 @@ struct DataSecurity {
             self.strSubtitle = strSubtitle
             
         }
+        if let data = strThird{
+            self.strThirdData = data
+        }
+        
+        if let data = strFourData{
+            self.strFourData = data
+        }
+        
         if let imgSend = imgCustom{
             self.imgCustom = imgSend
             
@@ -68,42 +81,6 @@ struct DataSecurity {
 }
 
 
-class BDMSimpleCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblSubtitle: UILabel!
-    
-    @IBOutlet weak var imgGeneric: UIImageView!
-    
-    @IBOutlet weak var cnLyWidthImg: NSLayoutConstraint!
-    var objSecurity : DataSecurity?{
-        didSet{
-            
-            guard let obj = objSecurity else { return }
-            
-            lblTitle.text = obj.strTitle
-            lblSubtitle.text = obj.strSubtitle
-            
-            if let img = obj.imgCustom{
-                imgGeneric.image = img
-                cnLyWidthImg.constant = 25
-                self.updateConstraintsIfNeeded()
-            }
-        }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
-    
-}
 
 
 
@@ -148,6 +125,8 @@ class STConfigurationSecurityTableVC: UIViewController {
         
     }
     
+    func btnShareAction(){}
+
     internal func selectedElement( indexPath : IndexPath){
         
     }
@@ -180,6 +159,7 @@ extension STConfigurationSecurityTableVC : UITableViewDelegate, UITableViewDataS
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleCell", for: indexPath) as? BDMSimpleCell{
                 
                 cell.objSecurity = objet
+                cell.delegate = self
                 
                 return cell
                 
@@ -196,6 +176,13 @@ extension STConfigurationSecurityTableVC : UITableViewDelegate, UITableViewDataS
     }
     
     
+    
+}
+
+extension STConfigurationSecurityTableVC : BDMSimpleCellDelegate{
+    func shareAction() {
+        btnShareAction()
+    }
     
     
 }

@@ -10,7 +10,6 @@ import UIKit
 
 class User: NSObject {
 
-    
     var strName : String?
     var strDrossap: String?
     var strConfirmDrossap : String?
@@ -19,10 +18,10 @@ class User: NSObject {
     var dteBorn : Date?
     var strNumEmployee : String?
     var strPhone : String?
+    var strAddress : String?
+    var strCompany : String?
     
-    
-    
-    init(name : String , email : String, contraseña: String, numeroEmpledo : String, fechaNacimiento : String, telefono : String) {
+    init(name : String , email : String, contraseña: String, numeroEmpledo : String, fechaNacimiento : String, telefono : String, strAddress : String? = nil, strCompany : String? =  nil) {
         
         self.strName = name
         self.strEmail = email
@@ -30,6 +29,8 @@ class User: NSObject {
         self.strNumEmployee = numeroEmpledo
         self.strDateBorn = fechaNacimiento
         self.strPhone = telefono
+        self.strAddress = strAddress
+        self.strCompany = strCompany
     }
     
 }

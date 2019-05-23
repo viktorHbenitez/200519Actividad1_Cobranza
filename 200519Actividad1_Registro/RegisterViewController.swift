@@ -34,7 +34,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -92,7 +91,6 @@ class RegisterViewController: UIViewController {
             if bSuccess{
                 DispatchQueue.main.async {
                     self.btnLogionPressed()
-//                    self.navigationController?.popToRootViewController(animated: true)
 
                 }
             }

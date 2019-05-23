@@ -10,25 +10,51 @@ import UIKit
 
 class EmployeViewController: STConfigurationSecurityTableVC {
 
-    
     var arrEmployees : [User]?
+    var arrData : [DataSecurity] = [DataSecurity]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         for employee in arrEmployees!{
-            arrElements?.append(DataSecurity(strTitle: employee.strName, strSubtitle:  employee.strEmail))
+            arrData.append(DataSecurity(strTitle: employee.strName, strSubtitle: employee.strDateBorn, strThird: employee.strAddress, strFourData: employee.strCompany))
         }
         
-    
-        
+        arrElements = arrData
     }
     
-//    arrElements = [DataSecurity(strTitle   : "Actualizar mi clave de seguridad",
-//    strSubtitle: "Esta clave autoriza todas tus operaciones"),
-//    DataSecurity(strTitle   : "Actualizar mi contraseña",
-//    strSubtitle: "Con ella inicias sesión en tu App"),
-//    DataSecurity(strTitle   : "Habilitar mi huella digital",
-//    strSubtitle: "Tu huella será tu clave de seguridad y contraseña")]
     
+    
+    override func btnShareAction() {
+        let firstActivityItem = "Text you want"
+        let secondActivityItem : NSURL = NSURL(string: "http//:urlyouwant")!
+        // If you want to put an image
+        let image : UIImage = UIImage(named: "cake.png")!
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, secondActivityItem, image], applicationActivities: nil)
+        
+        // Anything you want to exclude
+        activityViewController.excludedActivityTypes = [
+            UIActivity.ActivityType.postToWeibo,
+            UIActivity.ActivityType.print,
+            UIActivity.ActivityType.assignToContact,
+            UIActivity.ActivityType.saveToCameraRoll,
+            UIActivity.ActivityType.addToReadingList,
+            UIActivity.ActivityType.postToFlickr,
+            UIActivity.ActivityType.postToVimeo,
+            UIActivity.ActivityType.postToTencentWeibo,
+            UIActivity.ActivityType.airDrop
+        ]
+        
+        self.present(activityViewController, animated: true, completion: nil)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.title = "Empleados"
+    }
 }

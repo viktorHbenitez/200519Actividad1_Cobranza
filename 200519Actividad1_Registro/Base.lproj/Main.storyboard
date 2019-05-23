@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-Vo-vly">
-                                <rect key="frame" x="16" y="254" width="343" height="82"/>
+                                <rect key="frame" x="16" y="242.5" width="343" height="82"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZw-7N-3kr">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -37,14 +37,14 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aN-fw-Uqh">
-                                <rect key="frame" x="125" y="412" width="125" height="30"/>
+                                <rect key="frame" x="125" y="400.5" width="125" height="30"/>
                                 <state key="normal" title="Olvide contraseña"/>
                                 <connections>
                                     <action selector="btnForgotDrossap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Knl-0K-mMe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AL-to-FZR">
-                                <rect key="frame" x="159" y="450" width="57" height="30"/>
+                                <rect key="frame" x="159" y="438.5" width="57" height="30"/>
                                 <state key="normal" title="Registro"/>
                                 <connections>
                                     <action selector="btnSingUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IRt-Wj-G6c"/>
@@ -57,7 +57,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apc-qR-5Yt">
-                                <rect key="frame" x="166.5" y="362" width="42" height="30"/>
+                                <rect key="frame" x="166.5" y="350.5" width="42" height="30"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rgq-fq-JHj"/>
@@ -66,6 +66,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Y9d-Vo-vly" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.85" id="AO8-4s-ss4"/>
                             <constraint firstItem="0AL-to-FZR" firstAttribute="centerX" secondItem="6aN-fw-Uqh" secondAttribute="centerX" id="CpL-jG-F2w"/>
                             <constraint firstItem="2g1-ZL-Hu5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="FwY-q5-Pc9"/>
                             <constraint firstItem="apc-qR-5Yt" firstAttribute="top" secondItem="Y9d-Vo-vly" secondAttribute="bottom" constant="26" id="GA7-C0-ffb"/>
@@ -76,7 +77,6 @@
                             <constraint firstItem="apc-qR-5Yt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nMM-Hf-cMA"/>
                             <constraint firstItem="6aN-fw-Uqh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rgI-gD-bND"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y9d-Vo-vly" secondAttribute="trailing" constant="16" id="tXT-70-7v2"/>
-                            <constraint firstItem="Y9d-Vo-vly" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="190" id="vmq-Ld-Nlj"/>
                             <constraint firstItem="Y9d-Vo-vly" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wM3-Lv-Bue"/>
                             <constraint firstItem="2g1-ZL-Hu5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yr2-Lz-1gS"/>
                         </constraints>
@@ -329,9 +329,24 @@
                     <view key="view" contentMode="scaleToFill" id="Qz5-Ft-ohe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ImE-co-GZf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ImE-co-GZf" firstAttribute="top" secondItem="g4P-jy-dkb" secondAttribute="top" id="SlZ-vF-mkf"/>
+                            <constraint firstItem="g4P-jy-dkb" firstAttribute="bottom" secondItem="ImE-co-GZf" secondAttribute="bottom" id="VAc-Vn-P03"/>
+                            <constraint firstItem="ImE-co-GZf" firstAttribute="leading" secondItem="g4P-jy-dkb" secondAttribute="leading" id="iXT-bM-MV9"/>
+                            <constraint firstItem="g4P-jy-dkb" firstAttribute="trailing" secondItem="ImE-co-GZf" secondAttribute="trailing" id="pkU-PY-9eV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g4P-jy-dkb"/>
                     </view>
+                    <connections>
+                        <outlet property="tblTableView" destination="ImE-co-GZf" id="whv-Jt-F1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcZ-At-2Wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
