@@ -23,17 +23,17 @@ class ViewController: UIViewController {
     }
     var dummyUser : User?
     
-    var arrUser : [User]?
+    var arrUser : [Employee]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        arrUser = [User]()
-       
+       arrUser = [Employee]()
         
-        self.addUser(name: "viktor", email: "Viktor@hotmail.com", contraseña: "12345", fechaNacimiento: "20/01/1945", telefono: "1234565", numEmpleado: "111111", strAddress: "Montes Urales 470, Lomas - Virreyes, Lomas de Chapultepec, 11000 Ciudad de México", strCompany: "Oracle")
-        self.addUser(name: "hugo", email: "hugo@hotmail.com", contraseña: "111111", fechaNacimiento: "20/05/1992", telefono: "1234565", numEmpleado: "111111", strAddress: "Calle Río Lerma 232, Cuauhtémoc, 06500 Ciudad de México", strCompany: "Red Hat Mexico")
-         self.addUser(name: "Eduardo", email: "eduardo@hotmail.com", contraseña: "111111", fechaNacimiento: "20/05/1987", telefono: "1234565", numEmpleado: "111111", strAddress: "Villa panamerica 11525", strCompany: "Red Hat Mexico")
+        APIService.shareInstance.fetchEmployee { (arrEmployees) in
+            self.arrUser = arrEmployees
+            
+        }
         
         setUpPickerIntoTxf()
     }
@@ -74,15 +74,6 @@ class ViewController: UIViewController {
         
     }
     
-    func addUser(name : String, email : String, contraseña : String, fechaNacimiento : String?, telefono : String, numEmpleado : String, strAddress : String? = nil , strCompany : String? = nil ){
-        let dummyUser = User(name: name, email: email, contraseña: contraseña, numeroEmpledo: numEmpleado, fechaNacimiento: fechaNacimiento ?? "", telefono: telefono, strAddress: strAddress, strCompany: strCompany)
-        
-        arrUser?.append(dummyUser)
-        
-    }
-
-    
-    
     var strDrossap : String?
     var strUserLogin : String?
     var bFoundUser = false
@@ -92,7 +83,7 @@ class ViewController: UIViewController {
         
         for user in arrUser!{
             if !bFoundUser{
-                if user.strDrossap == strDrossap && (user.strEmail == strUserLogin || user.strName == strUserLogin){
+                if ("12345" == strDrossap) && (user.email == strUserLogin || user.fullName == strUserLogin){
                     bFoundUser = true
                 }
             }
@@ -158,7 +149,7 @@ class ViewController: UIViewController {
     func  validateUser(strUser : String) -> Bool{
         for user in arrUser!{
             if !bFoundUser{
-                if (user.strEmail == strUser || user.strName == strUser){
+                if (user.email == strUser || user.fullName == strUser){
                     return true
                 }
             }
@@ -178,20 +169,15 @@ class ViewController: UIViewController {
         if let sourceViewController = segue.source as? RegisterViewController {
             userRegister = sourceViewController.userRegister
             
-            arrUser = [User]()
-            createDummyData()
+
             
-            self.addUser(name: userRegister?.strName ?? "", email: userRegister?.strEmail ?? "", contraseña: userRegister?.strDrossap ?? "", fechaNacimiento: "", telefono: userRegister?.strPhone ?? "", numEmpleado: userRegister?.strNumEmployee ?? "")
+            
         }
         
     }
     
     
-    func createDummyData(){
-        self.addUser(name: "viktor", email: "Viktor@hotmail.com", contraseña: "12345", fechaNacimiento: "nose", telefono: "1234565", numEmpleado: "111111")
-        self.addUser(name: "hugo", email: "hugo@hotmail.com", contraseña: "111111", fechaNacimiento: "nose", telefono: "1234565", numEmpleado: "111111")
-        
-    }
+  
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinanationVC = segue.destination as? DashboardViewController{

@@ -50,6 +50,7 @@ struct Employee: Codable {
     var maritalStatus: String?
     var role: String?
     var productsPurchased: String?
+//    var strDrossap: String = "12345"
     
     lazy var date: Date? = {
         guard let birthdaySring = birthday,
@@ -57,6 +58,33 @@ struct Employee: Codable {
         return Date(timeIntervalSince1970: birthday)
     }()
    
+    init(name : String , email : String, contraseña: String, numeroEmpledo : String, fechaNacimiento : String, telefono : String, strAddress : String? = nil, strCompany : String? =  nil) {
+        self.fullName = name
+        self.email = email
+//        self.strDrossap = contraseña
+        
+        self.birthday = String(converTimeInterval(strDate: fechaNacimiento))
+//        self.strDrossap = contraseña
+       
+    }
+    
+    func converTimeInterval (strDate : String) -> Int{
+        let dteFormaterr = DateFormatter()
+        dteFormaterr.dateFormat = "dd-MM-yyy"
+        if let dateStamp = dteFormaterr.date(from: strDate){
+            return Int(dateStamp.timeIntervalSince1970)
+        }
+        
+        return 0
+    }
+    
+    /*
+     var dfmatter = DateFormatter()
+dfmatter.dateFormat="yyyy-MM-dd"
+var date = dfmatter.date(from: "2016-12-1")
+var dateStamp:TimeInterval = date!.timeIntervalSince1970
+var dateSt:Int = Int(dateStamp)
+     */
 
 }
 

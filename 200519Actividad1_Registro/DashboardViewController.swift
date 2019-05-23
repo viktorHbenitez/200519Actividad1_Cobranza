@@ -9,13 +9,22 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
-
-    var arrEmployees : [User]?
+    @IBOutlet weak var btnLogin: UIButton!{
+        didSet{
+            btnLogin.isHidden = true
+        }
+    }
+    
+    var arrEmployees : [Employee]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        APIService.shareInstance.fetchEmployee { (arrEmployees) in
+            self.arrEmployees = arrEmployees
+            
+        }
         
     
         
@@ -59,6 +68,16 @@ struct DataSecurity {
     var strFourData : String?
     
     var imgCustom : UIImage?
+    
+    init(empleado : Employee) {
+        
+        self.strTitle = empleado.fullName
+        self.strSubtitle = empleado.birthday
+        self.strThirdData = empleado.address
+        self.strFourData = empleado.area
+        
+        
+    }
     
     init(strTitle : String?, strSubtitle : String? , strThird : String?, strFourData : String?,  imgCustom : UIImage? = nil) {
         

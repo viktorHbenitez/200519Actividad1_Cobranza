@@ -1,16 +1,14 @@
-# Actividades 1 : 
-## pantallas de Logeo, registro y recuperación de contraseñas  
+# Actividades 4 : 
+## Consumo de API's
 
-# Actividad 2 : 
-## Compartir contenido en iOS  
 
 ## Branch: VHBB_ActividadCobranza_Branch  
 
 ### Descripcion:
 
-La pantalla de Logeo debe tener una interfaz gráfica que permita el ingreso mediante el Usuario o Correo Electrónico y la contraseña, considere las opciones de: Olvide contraseña y de Registro (en caso de no estar registrado).  
+- Consumir el siguiente webservice: localhost/capitulo4/consumoApi/Empleados/  
+- Mostrar en un storyboard una lista de empleados  
+- Mostrar en un Storyboard el detalle de cada empleado  
 
-### Nota: Usuarios creados con datos dummys 
-
-![imagen](../master/assets/actividad1.gif)  
+![imagen](../VHBB_Actividad4ConsumoAPI_Branch/assets/actividad4.gif)  
 

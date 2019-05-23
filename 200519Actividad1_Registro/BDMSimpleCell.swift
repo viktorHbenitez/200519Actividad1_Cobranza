@@ -32,12 +32,27 @@ class BDMSimpleCell: UITableViewCell {
             guard let obj = objSecurity else { return }
             
             lblTitle.text = obj.strTitle
-            lblSubtitle.text = "Fecha Nac: \(obj.strSubtitle ?? "")   Edad: \(calculeAge(strBirthDate: obj.strSubtitle) ?? 0)"
+            if let fecha = converTimestamp(strInterval: obj.strSubtitle ?? ""), let edad = calculeAge(strBirthDate: fecha){
+                lblSubtitle.text = "Fecha Nacimiento: \(fecha) Edad: \(edad)"
+            }
             lblThird.text = obj.strThirdData
             lblFourt.text = obj.strFourData
             
             
         }
+    }
+    
+    
+    func converTimestamp(strInterval : String?) -> String?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyy"
+        
+        guard let birthdaySring = strInterval,
+            let birthday = Double(birthdaySring) else {return nil}
+        
+        let dteBirth = Date(timeIntervalSince1970: birthday)
+        
+        return dateFormatter.string(from: dteBirth)
     }
     
     var delegate : BDMSimpleCellDelegate?

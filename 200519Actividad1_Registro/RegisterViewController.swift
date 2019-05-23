@@ -110,8 +110,7 @@ class RegisterViewController: UIViewController {
     
     func setDataUser(){
         
-        userRegister = User(name: txfName.text!, email: txfEmail.text!, contraseña: txfPassword.text!, numeroEmpledo: "337133", fechaNacimiento: "Nose", telefono: txfPhoneNumber.text!)
-        
+        userRegister = User(name: txfName.text!, email: txfEmail.text!, contraseña: txfPassword.text!, numeroEmpledo: "337133", fechaNacimiento: txfBirdthDay.text!, telefono: txfPhoneNumber.text!)
     }
     
     

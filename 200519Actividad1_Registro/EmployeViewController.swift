@@ -10,21 +10,29 @@ import UIKit
 
 class EmployeViewController: STConfigurationSecurityTableVC {
 
-    var arrEmployees : [User]?
+    var arrEmployees : [Employee]?
     var arrData : [DataSecurity] = [DataSecurity]()
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
-        for employee in arrEmployees!{
-            arrData.append(DataSecurity(strTitle: employee.strName, strSubtitle: employee.strDateBorn, strThird: employee.strAddress, strFourData: employee.strCompany))
+        for employee in arrEmployees!{            
+            arrData.append(DataSecurity(empleado: employee))
         }
         
         arrElements = arrData
     }
     
+//    lazy var date: Date? = {
+//        guard let birthdaySring = birthday,
+//            let birthday = Double(birthdaySring) else {return nil}
+//        return Date(timeIntervalSince1970: birthday)
+//    }()
     
+    
+    
+   
     
     override func btnShareAction() {
         let firstActivityItem = "Text you want"

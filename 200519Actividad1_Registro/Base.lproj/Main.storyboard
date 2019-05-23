@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g1-ZL-Hu5">
-                                <rect key="frame" x="159" y="94" width="57.5" height="26.5"/>
+                                <rect key="frame" x="159" y="50" width="57.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -151,8 +151,10 @@
                         <viewLayoutGuide key="safeArea" id="gD1-M9-7Qu"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="WER-mJ-gny"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnLogin" destination="fMT-7r-Nlu" id="vZx-Eg-tPZ"/>
                         <segue destination="syE-DR-Eqk" kind="show" identifier="employee" id="U4p-a0-uSX"/>
                     </connections>
                 </viewController>
@@ -169,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iws-3X-RzF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXc-YW-pt8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
@@ -378,7 +380,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bdC-xb-QtB"/>
+                        <segue destination="CcP-Zz-Utl" kind="relationship" relationship="rootViewController" id="R5c-cs-1pe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jgd-oW-gcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -391,4 +393,7 @@
             <color name="ibMissingResourceColor" catalog="#$assets-com.apple.dt.DVTKit" colorSpace="catalog"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="R5c-cs-1pe"/>
+    </inferredMetricsTieBreakers>
 </document>
