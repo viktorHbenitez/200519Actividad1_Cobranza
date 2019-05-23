@@ -45,6 +45,11 @@ class DashboardViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func btnLogout(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
 
 struct DataSecurity {
@@ -169,6 +174,8 @@ extension STConfigurationSecurityTableVC : UITableViewDelegate, UITableViewDataS
         return UITableViewCell()
         
     }
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

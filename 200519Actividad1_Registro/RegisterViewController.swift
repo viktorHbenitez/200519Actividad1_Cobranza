@@ -36,6 +36,12 @@ class RegisterViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     
     @IBAction func btnRegister(_ sender: UIButton) {
         resetLablesMessage()
