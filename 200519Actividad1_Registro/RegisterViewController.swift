@@ -30,6 +30,11 @@ class RegisterViewController: UIViewController {
     
     var userRegister : User?
     
+    var arrEmpleado = [Empleado]()
+    
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,55 +43,77 @@ class RegisterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.title = "Registrarse"
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+    }
+   
+    
+    func addEmployee(){
+        let empleado = Empleado(entity: Empleado.entity(), insertInto: context)
+        empleado.fullName = txfName.text
+        empleado.adress = txfEmail.text
+        empleado.email = txfEmail.text
+//        empleado.dateBirth = txfBirdthDay.text
+        empleado.phoneNumber = Int16(txfPhoneNumber.text ?? "0") ?? 0
+        empleado.drowssap = txfPassword.text
+        appDelegate.saveContext()
     }
     
+    private func refresh() {
+        do {
+            arrEmpleado = try context.fetch(Empleado.fetchRequest())
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
     
     @IBAction func btnRegister(_ sender: UIButton) {
+        
+        
         resetLablesMessage()
         // Validate iquals password
         let bIqualsPass = txfPassword.text == txfPasswordConfirmation.text && txfPassword.text?.count ?? 0 > 0 && txfPasswordConfirmation.text?.count ?? 0 > 0
-        
+
         // Validate all fields
         let bValidAllFileds = txfName.text?.count ?? 0 > 0 && txfEmail.text?.count ?? 0 > 0 && txfPassword.text?.count ?? 0 > 0 && txfPasswordConfirmation.text?.count ?? 0 > 0 && txfBirdthDay.text?.count ?? 0 > 0
-        
+
         if swPrivacy.isOn{
-            
+
             if bValidAllFileds{
-                
+
                 print("All fields Completed")
-                
+
                 if bIqualsPass {
-                    
+
                     lblMessageAllFields.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
                     lblMessageAllFields.textColor = UIColor.white
                     lblMessageAllFields.text = "Usuario registrado correctamente"
-                    
-//                    setDataUser()
-                    
-                    
+
+                    addEmployee()
+
+
                     self.addAlert(strTitle: "Actividad 1", strMessage: "Usuario registrado correctamente ", bSuccess: true)
-                    
+
                 }else{
                     lblMessagePassword.text = " la confirme de la  contraseñas debe ser iguales"
                     print("Confirme contraseñas")
-                    
+
                 }
             }else{
                 print("you need to write all fields ")
-                
+
                 lblMessageAllFields.text = "Necesita llenar todos los campos (excepto opcionales)"
             }
-            
-            
+
+
         }else {
-            
+
             lblMessagePrivacy.text = "Necesita Aceptar las condiciones de uso"
             print("Necesita aceptar las politicas de privacidad")
         }
-        
-        
+
+
         
     }
     

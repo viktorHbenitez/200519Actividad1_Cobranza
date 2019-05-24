@@ -14,7 +14,7 @@ class DashboardViewController: UIViewController {
     
     @IBOutlet weak var btnlogout: UIButton!{
         didSet{
-            btnlogout.isHidden = true
+            btnlogout.isHidden = false
         }
     }
     override func viewDidLoad() {

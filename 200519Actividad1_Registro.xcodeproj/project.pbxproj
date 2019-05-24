@@ -22,6 +22,9 @@
 		E464792F22933669002E452D /* SimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E464792E22933669002E452D /* SimpleCell.xib */; };
 		E464793122933A2C002E452D /* EmployeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464793022933A2C002E452D /* EmployeViewController.swift */; };
 		E4C46F1822977B1D00606EDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C46F1722977B1D00606EDE /* CoreLocation.framework */; };
+		E4C46F1B2297ABA800606EDE /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4C46F192297ABA800606EDE /* User.xcdatamodeld */; };
+		E4C46F262297AF7A00606EDE /* Empleado+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C46F242297AF7A00606EDE /* Empleado+CoreDataClass.swift */; };
+		E4C46F292297BD4000606EDE /* Empleado+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C46F282297BD4000606EDE /* Empleado+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		E464792E22933669002E452D /* SimpleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCell.xib; sourceTree = "<group>"; };
 		E464793022933A2C002E452D /* EmployeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeViewController.swift; sourceTree = "<group>"; };
 		E4C46F1722977B1D00606EDE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E4C46F1A2297ABA800606EDE /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
+		E4C46F242297AF7A00606EDE /* Empleado+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Empleado+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E4C46F282297BD4000606EDE /* Empleado+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Empleado+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +86,14 @@
 				E46479162292FE87002E452D /* ViewController.swift */,
 				E464792822930347002E452D /* DashboardViewController.swift */,
 				E4295EDF22959D8B0020D94F /* BDMSimpleCell.swift */,
+				E4C46F282297BD4000606EDE /* Empleado+CoreDataProperties.swift */,
+				E4C46F242297AF7A00606EDE /* Empleado+CoreDataClass.swift */,
 				E464792E22933669002E452D /* SimpleCell.xib */,
 				E464792C22930E42002E452D /* RegisterViewController.swift */,
 				E464793022933A2C002E452D /* EmployeViewController.swift */,
 				E40BA74B22976E4700D96F26 /* MAPViewController.swift */,
 				E44A86562295944E00D697A3 /* APIService.swift */,
+				E4C46F192297ABA800606EDE /* User.xcdatamodeld */,
 				E40BA749229718C200D96F26 /* CobranzaViewController.swift */,
 				E464792A22930357002E452D /* User.swift */,
 				E46479182292FE87002E452D /* Main.storyboard */,
@@ -181,9 +190,12 @@
 				E40BA74C22976E4700D96F26 /* MAPViewController.swift in Sources */,
 				E4295EE022959D8B0020D94F /* BDMSimpleCell.swift in Sources */,
 				E40BA74A229718C200D96F26 /* CobranzaViewController.swift in Sources */,
+				E4C46F292297BD4000606EDE /* Empleado+CoreDataProperties.swift in Sources */,
 				E464792D22930E42002E452D /* RegisterViewController.swift in Sources */,
+				E4C46F1B2297ABA800606EDE /* User.xcdatamodeld in Sources */,
 				E46479172292FE87002E452D /* ViewController.swift in Sources */,
 				E46479152292FE87002E452D /* AppDelegate.swift in Sources */,
+				E4C46F262297AF7A00606EDE /* Empleado+CoreDataClass.swift in Sources */,
 				E464792922930347002E452D /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +398,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E4C46F192297ABA800606EDE /* User.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E4C46F1A2297ABA800606EDE /* User.xcdatamodel */,
+			);
+			currentVersion = E4C46F1A2297ABA800606EDE /* User.xcdatamodel */;
+			path = User.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E46479092292FE87002E452D /* Project object */;
 }

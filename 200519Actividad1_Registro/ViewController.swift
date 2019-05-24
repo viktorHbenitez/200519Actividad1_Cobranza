@@ -24,16 +24,13 @@ class ViewController: UIViewController {
     var dummyUser : User?
     
     var arrUser : [User]?
-    
+    var arrEmpleado = [Empleado]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         arrUser = [User]()
        
-        
-        self.addUser(name: "viktor", email: "Viktor@hotmail.com", contraseña: "12345", fechaNacimiento: "20/01/1945", telefono: "1234565", numEmpleado: "111111", strAddress: "Montes Urales 470, Lomas - Virreyes, Lomas de Chapultepec, 11000 Ciudad de México", strCompany: "Oracle")
-        self.addUser(name: "hugo", email: "hugo@hotmail.com", contraseña: "111111", fechaNacimiento: "20/05/1992", telefono: "1234565", numEmpleado: "111111", strAddress: "Calle Río Lerma 232, Cuauhtémoc, 06500 Ciudad de México", strCompany: "Red Hat Mexico")
-         self.addUser(name: "Eduardo", email: "eduardo@hotmail.com", contraseña: "111111", fechaNacimiento: "20/05/1987", telefono: "1234565", numEmpleado: "111111", strAddress: "Villa panamerica 11525", strCompany: "Red Hat Mexico")
         
         setUpPickerIntoTxf()
     }
@@ -43,6 +40,12 @@ class ViewController: UIViewController {
         
         txfUserLogin.text = ""
         txfDrossapLogin.text = ""
+        
+        do {
+            arrEmpleado = try context.fetch(Empleado.fetchRequest())
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
         
     }
     
@@ -74,13 +77,9 @@ class ViewController: UIViewController {
         
     }
     
-    func addUser(name : String, email : String, contraseña : String, fechaNacimiento : String?, telefono : String, numEmpleado : String, strAddress : String? = nil , strCompany : String? = nil ){
-//        let dummyUser = User(name: name, email: email, contraseña: contraseña, numeroEmpledo: numEmpleado, fechaNacimiento: fechaNacimiento ?? "", telefono: telefono, strAddress: strAddress, strCompany: strCompany, latitud: <#Double#>)
-        
-//        arrUser?.append(dummyUser)
-        
-    }
 
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     var strDrossap : String?
@@ -89,28 +88,33 @@ class ViewController: UIViewController {
     @IBAction func btnLogin(_ sender: UIButton) {
         
         bFoundUser = false
-        
-        for user in arrUser!{
+
+        for user in arrEmpleado{
             if !bFoundUser{
-                if user.strDrossap == strDrossap && (user.strEmail == strUserLogin || user.strName == strUserLogin){
+//                if user.strDrossap == strDrossap && (user.strEmail == strUserLogin || user.strName == strUserLogin){
+                
+                if user.drowssap == strDrossap && (user.email == strUserLogin || user.fullName == strUserLogin){
                     bFoundUser = true
                 }
             }
         }
-        
+
         if bFoundUser {
             performSegue(withIdentifier: "dashboard", sender: nil)
 
         }else{
             let alert = UIAlertController(title: "Actividad 1", message: "El usario no se encuentra registrado, favor de verificar sus credenciales", preferredStyle: .alert)
-            
+
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-            
+
             alert.addAction(ok)
-            
+
             self.present(alert, animated: true, completion: nil)
         }
         
+        for empleado in arrEmpleado{
+            print("Nombre", empleado.fullName, "contraseña", empleado.drowssap)
+        }
     }
     
     func addAlert(strTitle : String?, strMessage : String?, bSuccess : Bool = false){
@@ -177,21 +181,10 @@ class ViewController: UIViewController {
         arrUser = nil
         if let sourceViewController = segue.source as? RegisterViewController {
             userRegister = sourceViewController.userRegister
-            
-            arrUser = [User]()
-            createDummyData()
-            
-            self.addUser(name: userRegister?.strName ?? "", email: userRegister?.strEmail ?? "", contraseña: userRegister?.strDrossap ?? "", fechaNacimiento: "", telefono: userRegister?.strPhone ?? "", numEmpleado: userRegister?.strNumEmployee ?? "")
         }
         
     }
     
-    
-    func createDummyData(){
-        self.addUser(name: "viktor", email: "Viktor@hotmail.com", contraseña: "12345", fechaNacimiento: "nose", telefono: "1234565", numEmpleado: "111111")
-        self.addUser(name: "hugo", email: "hugo@hotmail.com", contraseña: "111111", fechaNacimiento: "nose", telefono: "1234565", numEmpleado: "111111")
-        
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinanationVC = segue.destination as? DashboardViewController{
@@ -214,4 +207,5 @@ extension ViewController : UITextFieldDelegate{
     }
     
 }
+
 
