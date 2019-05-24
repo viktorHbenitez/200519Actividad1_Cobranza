@@ -75,9 +75,9 @@ class ViewController: UIViewController {
     }
     
     func addUser(name : String, email : String, contraseña : String, fechaNacimiento : String?, telefono : String, numEmpleado : String, strAddress : String? = nil , strCompany : String? = nil ){
-        let dummyUser = User(name: name, email: email, contraseña: contraseña, numeroEmpledo: numEmpleado, fechaNacimiento: fechaNacimiento ?? "", telefono: telefono, strAddress: strAddress, strCompany: strCompany)
+//        let dummyUser = User(name: name, email: email, contraseña: contraseña, numeroEmpledo: numEmpleado, fechaNacimiento: fechaNacimiento ?? "", telefono: telefono, strAddress: strAddress, strCompany: strCompany, latitud: <#Double#>)
         
-        arrUser?.append(dummyUser)
+//        arrUser?.append(dummyUser)
         
     }
 

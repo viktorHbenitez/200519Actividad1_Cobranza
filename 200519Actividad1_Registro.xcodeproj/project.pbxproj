@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40BA74A229718C200D96F26 /* CobranzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40BA749229718C200D96F26 /* CobranzaViewController.swift */; };
+		E40BA74C22976E4700D96F26 /* MAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40BA74B22976E4700D96F26 /* MAPViewController.swift */; };
 		E4295EE022959D8B0020D94F /* BDMSimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4295EDF22959D8B0020D94F /* BDMSimpleCell.swift */; };
 		E44A86572295944E00D697A3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A86562295944E00D697A3 /* APIService.swift */; };
 		E46479152292FE87002E452D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46479142292FE87002E452D /* AppDelegate.swift */; };
@@ -19,9 +21,12 @@
 		E464792D22930E42002E452D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464792C22930E42002E452D /* RegisterViewController.swift */; };
 		E464792F22933669002E452D /* SimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E464792E22933669002E452D /* SimpleCell.xib */; };
 		E464793122933A2C002E452D /* EmployeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464793022933A2C002E452D /* EmployeViewController.swift */; };
+		E4C46F1822977B1D00606EDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C46F1722977B1D00606EDE /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E40BA749229718C200D96F26 /* CobranzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CobranzaViewController.swift; sourceTree = "<group>"; };
+		E40BA74B22976E4700D96F26 /* MAPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPViewController.swift; sourceTree = "<group>"; };
 		E4295EDF22959D8B0020D94F /* BDMSimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMSimpleCell.swift; sourceTree = "<group>"; };
 		E44A86562295944E00D697A3 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E46479112292FE87002E452D /* 200519Actividad1_Registro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 200519Actividad1_Registro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +41,7 @@
 		E464792C22930E42002E452D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E464792E22933669002E452D /* SimpleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCell.xib; sourceTree = "<group>"; };
 		E464793022933A2C002E452D /* EmployeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeViewController.swift; sourceTree = "<group>"; };
+		E4C46F1722977B1D00606EDE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C46F1822977B1D00606EDE /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +61,7 @@
 			children = (
 				E46479132292FE87002E452D /* 200519Actividad1_Registro */,
 				E46479122292FE87002E452D /* Products */,
+				E4C46F1622977B1C00606EDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +83,9 @@
 				E464792E22933669002E452D /* SimpleCell.xib */,
 				E464792C22930E42002E452D /* RegisterViewController.swift */,
 				E464793022933A2C002E452D /* EmployeViewController.swift */,
+				E40BA74B22976E4700D96F26 /* MAPViewController.swift */,
 				E44A86562295944E00D697A3 /* APIService.swift */,
+				E40BA749229718C200D96F26 /* CobranzaViewController.swift */,
 				E464792A22930357002E452D /* User.swift */,
 				E46479182292FE87002E452D /* Main.storyboard */,
 				E464791B2292FE88002E452D /* Assets.xcassets */,
@@ -83,6 +93,14 @@
 				E46479202292FE88002E452D /* Info.plist */,
 			);
 			path = 200519Actividad1_Registro;
+			sourceTree = "<group>";
+		};
+		E4C46F1622977B1C00606EDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4C46F1722977B1D00606EDE /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +178,9 @@
 				E464793122933A2C002E452D /* EmployeViewController.swift in Sources */,
 				E44A86572295944E00D697A3 /* APIService.swift in Sources */,
 				E464792B22930357002E452D /* User.swift in Sources */,
+				E40BA74C22976E4700D96F26 /* MAPViewController.swift in Sources */,
 				E4295EE022959D8B0020D94F /* BDMSimpleCell.swift in Sources */,
+				E40BA74A229718C200D96F26 /* CobranzaViewController.swift in Sources */,
 				E464792D22930E42002E452D /* RegisterViewController.swift in Sources */,
 				E46479172292FE87002E452D /* ViewController.swift in Sources */,
 				E46479152292FE87002E452D /* AppDelegate.swift in Sources */,

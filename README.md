@@ -1,16 +1,14 @@
-# Actividades 1 : 
-## pantallas de Logeo, registro y recuperación de contraseñas  
+# Actividades 5 : 
+## Geolocalización  
 
-# Actividad 2 : 
-## Compartir contenido en iOS  
-
-## Branch: VHBB_ActividadCobranza_Branch  
 
 ### Descripcion:
+- Las personas con un cargo de Jefe de cobranza deben de mostrarse de un color diferente a las demás.  
+- Tener un botón con la indicación de Rutas asignadas donde se listarán las diferentes rutas asignadas para esta persona  
+- Una vez que se le da clic muestra los siguientes detalles de cada ruta  
 
-La pantalla de Logeo debe tener una interfaz gráfica que permita el ingreso mediante el Usuario o Correo Electrónico y la contraseña, considere las opciones de: Olvide contraseña y de Registro (en caso de no estar registrado).  
 
 ### Nota: Usuarios creados con datos dummys 
+![imagen](../master/assets/actividad5.gif)  
 
-![imagen](../master/assets/actividad1.gif)  
 

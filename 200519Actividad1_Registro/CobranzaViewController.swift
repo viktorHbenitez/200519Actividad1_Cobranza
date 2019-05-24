@@ -8,23 +8,57 @@
 
 import UIKit
 
-class CobranzaViewController: UIViewController {
+class CobranzaViewController: STConfigurationSecurityTableVC {
 
+    
+    var arrUser : [User]?
+    var arrData : [DataSecurity]?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+        if let arrUsuarios = arrUser{
+            arrData = [DataSecurity]()
+            for user in arrUsuarios{
+                arrData?.append(DataSecurity(strTitle: user.strName, strSubtitle: user.strStatusJob?.rawValue, strThird: user.strAddress, strFourData: user.strEmail, bCobranza: true) )
+            }
+            
+            arrElements = arrData
+        }
+      
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Cobranza"
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        
     }
-    */
+    
+    
+    override func btnShareAction() {
+//        performSegue(withIdentifier: "mapa", sender: nil)
+    }
+    
+    override func selectedElement(indexPath: IndexPath) {
+        
+        if indexPath.row == 0 || indexPath.row == 3{
+
+        }else{
+            performSegue(withIdentifier: "mapa", sender: indexPath)
+
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? MAPViewController{
+            if let index = sender as? IndexPath{
+                destinationVC.user = arrUser?[index.row]
+
+            }
+        }
+    }
+
 
 }

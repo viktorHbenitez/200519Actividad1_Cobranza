@@ -21,7 +21,7 @@ class BDMSimpleCell: UITableViewCell {
     @IBOutlet weak var btnShare: UIButton!{
         didSet{
             
-            btnShare.isHidden = false
+            btnShare.isHidden = true
         }
     }
     
@@ -31,10 +31,32 @@ class BDMSimpleCell: UITableViewCell {
             
             guard let obj = objSecurity else { return }
             
-            lblTitle.text = obj.strTitle
-            lblSubtitle.text = "Fecha Nac: \(obj.strSubtitle ?? "")   Edad: \(calculeAge(strBirthDate: obj.strSubtitle) ?? 0)"
-            lblThird.text = obj.strThirdData
-            lblFourt.text = obj.strFourData
+            if obj.bCobranza{
+
+                if obj.strSubtitle == "Jefe"{
+                    self.backgroundColor = UIColor.blue
+                    lblTitle.textColor = UIColor.white
+                    lblSubtitle.textColor = UIColor.white
+                    lblFourt.textColor = UIColor.white
+                }else{
+                    btnShare.isHidden = false
+                    btnShare.setImage(UIImage(named: "mapa"), for: .normal)
+                }
+                
+               
+                lblTitle.text = obj.strTitle
+                lblSubtitle.text = obj.strSubtitle
+                lblFourt.text = obj.strFourData
+                
+               
+            }else{
+                lblTitle.text = obj.strTitle
+                lblSubtitle.text = "Fecha Nac: \(obj.strSubtitle ?? "")   Edad: \(calculeAge(strBirthDate: obj.strSubtitle) ?? 0)"
+                lblThird.text = obj.strThirdData
+                lblFourt.text = obj.strFourData
+                
+            }
+           
             
             
         }

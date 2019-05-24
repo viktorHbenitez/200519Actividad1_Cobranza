@@ -63,7 +63,7 @@ class RegisterViewController: UIViewController {
                     lblMessageAllFields.textColor = UIColor.white
                     lblMessageAllFields.text = "Usuario registrado correctamente"
                     
-                    setDataUser()
+//                    setDataUser()
                     
                     
                     self.addAlert(strTitle: "Actividad 1", strMessage: "Usuario registrado correctamente ", bSuccess: true)
@@ -108,11 +108,11 @@ class RegisterViewController: UIViewController {
     
     
     
-    func setDataUser(){
-        
-        userRegister = User(name: txfName.text!, email: txfEmail.text!, contraseña: txfPassword.text!, numeroEmpledo: "337133", fechaNacimiento: "Nose", telefono: txfPhoneNumber.text!)
-        
-    }
+//    func setDataUser(){
+//
+//        userRegister = User(name: txfName.text!, email: txfEmail.text!, contraseña: txfPassword.text!, numeroEmpledo: "337133", fechaNacimiento: "Nose", telefono: txfPhoneNumber.text!)
+//
+//    }
     
     
     @IBAction func btnLogionPressed() {
