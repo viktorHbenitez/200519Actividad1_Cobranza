@@ -9,6 +9,6 @@
 
 
 ### Nota: Usuarios creados con datos dummys 
-![imagen](../master/assets/actividad5.gif)  
+![imagen](../VHBB_Actividad5Geolocalizacion_Branch/assets/actividad5.gif)  
 
 
