@@ -6,9 +6,10 @@
         <attribute name="drowssap" attributeType="String" syncable="YES"/>
         <attribute name="email" attributeType="String" syncable="YES"/>
         <attribute name="fullName" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Empleado" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Empleado" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

@@ -17,11 +17,12 @@ extension Empleado {
         return NSFetchRequest<Empleado>(entityName: "Empleado")
     }
 
-    @NSManaged public var fullName: String?
     @NSManaged public var adress: String?
     @NSManaged public var dateBirth: NSDate?
-    @NSManaged public var email: String?
-    @NSManaged public var phoneNumber: Int16
     @NSManaged public var drowssap: String?
+    @NSManaged public var email: String?
+    @NSManaged public var fullName: String?
+    @NSManaged public var phoneNumber: Int16
+    @NSManaged public var identifier: String?
 
 }

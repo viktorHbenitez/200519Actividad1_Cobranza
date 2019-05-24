@@ -10,7 +10,7 @@ import UIKit
 
 class EmployeViewController: STConfigurationSecurityTableVC {
 
-    var arrEmployees : [User]?
+    var arrEmployees : [Empleado]?
     var arrData : [DataSecurity] = [DataSecurity]()
    
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class EmployeViewController: STConfigurationSecurityTableVC {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         for employee in arrEmployees!{
-            arrData.append(DataSecurity(strTitle: employee.strName, strSubtitle: employee.strDateBorn, strThird: employee.strAddress, strFourData: employee.strCompany))
+            arrData.append(DataSecurity(strTitle: employee.fullName, strSubtitle: "", strThird: employee.adress, strFourData: employee.email))
         }
         
         arrElements = arrData

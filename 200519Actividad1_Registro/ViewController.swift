@@ -47,6 +47,9 @@ class ViewController: UIViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         
+        for empleado in arrEmpleado{
+            print("identificador", empleado.identifier ?? "", "Nombre", empleado.fullName, "contraseña", empleado.drowssap)
+        }
     }
     
     
@@ -85,6 +88,7 @@ class ViewController: UIViewController {
     var strDrossap : String?
     var strUserLogin : String?
     var bFoundUser = false
+    var userSelected = Empleado()
     @IBAction func btnLogin(_ sender: UIButton) {
         
         bFoundUser = false
@@ -94,6 +98,7 @@ class ViewController: UIViewController {
 //                if user.strDrossap == strDrossap && (user.strEmail == strUserLogin || user.strName == strUserLogin){
                 
                 if user.drowssap == strDrossap && (user.email == strUserLogin || user.fullName == strUserLogin){
+                    userSelected = user
                     bFoundUser = true
                 }
             }
@@ -112,9 +117,7 @@ class ViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         
-        for empleado in arrEmpleado{
-            print("Nombre", empleado.fullName, "contraseña", empleado.drowssap)
-        }
+        
     }
     
     func addAlert(strTitle : String?, strMessage : String?, bSuccess : Bool = false){
@@ -180,15 +183,21 @@ class ViewController: UIViewController {
         
         arrUser = nil
         if let sourceViewController = segue.source as? RegisterViewController {
-            userRegister = sourceViewController.userRegister
+//            userRegister = sourceViewController.userRegister
         }
+        
+       
         
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinanationVC = segue.destination as? DashboardViewController{
-            destinanationVC.arrEmployees = arrUser
+        if let destinationVC = segue.destination as? DashboardViewController{
+            destinationVC.arrEmployees = arrEmpleado
+            destinationVC.empleadoSElected = userSelected
+        }
+        if let destinationVC = segue.destination as? RegisterViewController{
+            destinationVC.arrEmpleado = arrEmpleado
         }
     }
 }

@@ -1,14 +1,13 @@
-# Actividades 5 : 
-## Geolocalización  
+# Actividades 6 : 
+## Persistencia de datos  (Core data)
 
 
 ### Descripcion:
-- Las personas con un cargo de Jefe de cobranza deben de mostrarse de un color diferente a las demás.  
-- Tener un botón con la indicación de Rutas asignadas donde se listarán las diferentes rutas asignadas para esta persona  
-- Una vez que se le da clic muestra los siguientes detalles de cada ruta  
+Con base en la práctica inicial considere el formulario para editar la información de cada empleado.  
+El formulario deberá poder almacenar la información del empleado o actualizarla según sea el caso.  
+Los empleados no pueden ser eliminados, pero si pueden ser deshabilitados y no aparecer en el listado general.  
 
 
-### Nota: Usuarios creados con datos dummys 
-![imagen](../VHBB_Actividad5Geolocalizacion_Branch/assets/actividad5.gif)  
+![imagen](../VHBB_Actividad6Persistencia_Branch/assets/actividad6.gif)  
 
 
